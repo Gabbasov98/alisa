@@ -35,22 +35,31 @@
 
 
 
-        <button style="border: 2px solid #000;margin-bottom: 20px;" data-bs-toggle="modal" data-bs-target="#quickOrder">
-            Быстрый заказ
+        <button data-modal="callModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Вызов Дизайнера-замершика
+        </button>
+        <button data-modal="callModal2" style="border: 2px solid #000;margin-bottom: 20px;">
+            Вызов Дизайнера-замершика 2
+        </button>
+        <button data-modal="callModal3" style="border: 2px solid #000;margin-bottom: 20px;">
+            Вызов Дизайнера-замершика 3
+        </button>
+        <button data-modal="inviteModal" style="border: 2px solid #000;margin-bottom: 20px;">
+            Вызов Дизайнера-замершика 4
         </button>
 
 
-        <code>
+        <!--        <code>-->
 
-            @@include
-            ('components/page-blocks/_filter-slider.html',{ <br>
-            "start1":"0", <br>
-            "start2":"30000", <br>
-            "min":"1000", <br>
-            "max":"100000", <br>
-            })
 
-        </code>
+        <!--            ('components/page-blocks/_filter-slider.html',{ <br>-->
+        <!--            "start1":"0", <br>-->
+        <!--            "start2":"30000", <br>-->
+        <!--            "min":"1000", <br>-->
+        <!--            "max":"100000", <br>-->
+        <!--            })-->
+
+        <!--        </code>-->
     </div>
 
 
@@ -59,17 +68,479 @@
 
 
 
-    <div class="modal" id="Modal">
+    <div class="modal" id="callModal">
         <div class="modal__bg modal-bg _close-modal"></div>
         <div class="modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.2806 18.2193C19.3502 18.289 19.4055 18.3717 19.4432 18.4628C19.4809 18.5538 19.5003 18.6514 19.5003 18.7499C19.5003 18.8485 19.4809 18.9461 19.4432 19.0371C19.4055 19.1281 19.3502 19.2109 19.2806 19.2806C19.2109 19.3502 19.1281 19.4055 19.0371 19.4432C18.9461 19.4809 18.8485 19.5003 18.7499 19.5003C18.6514 19.5003 18.5538 19.4809 18.4628 19.4432C18.3717 19.4055 18.289 19.3502 18.2193 19.2806L11.9999 13.0602L5.78055 19.2806C5.63982 19.4213 5.44895 19.5003 5.24993 19.5003C5.05091 19.5003 4.86003 19.4213 4.7193 19.2806C4.57857 19.1398 4.49951 18.949 4.49951 18.7499C4.49951 18.5509 4.57857 18.36 4.7193 18.2193L10.9396 11.9999L4.7193 5.78055C4.57857 5.63982 4.49951 5.44895 4.49951 5.24993C4.49951 5.05091 4.57857 4.86003 4.7193 4.7193C4.86003 4.57857 5.05091 4.49951 5.24993 4.49951C5.44895 4.49951 5.63982 4.57857 5.78055 4.7193L11.9999 10.9396L18.2193 4.7193C18.36 4.57857 18.5509 4.49951 18.7499 4.49951C18.949 4.49951 19.1398 4.57857 19.2806 4.7193C19.4213 4.86003 19.5003 5.05091 19.5003 5.24993C19.5003 5.44895 19.4213 5.63982 19.2806 5.78055L13.0602 11.9999L19.2806 18.2193Z" fill="black" />
+                </svg>
+            </button>
             <div class="modal__top">
-                <div class="text32 medium-text">
-                    Title
+                <div class="h3">
+                    Вызов Дизайнера-замершика
                 </div>
-                <button class="close-btn _close-modal">
-                    <img src="img/close.svg" alt="">
-                </button>
             </div>
+            <div class="modal__desc">
+                <p>Оставьте свои контактные данные, чтобы мы связались с вами и договорились о приезде нашего специалиста.</p>
+                <p>Замеры производятся с 9:00 до 22:00 ежедневно, включая субботу и воскресенье. Дизайнер привезет образцы материалов и на месте подготовит проект планировки. Выезд мастера, замеры и подготовка проекта осуществляются бесплатно!</p>
+            </div>
+            <form action="" class="modal-form">
+                <div class="fg">
+                    <label>Имя*</label>
+                    <input type="text" placeholder="Ваше имя">
+                </div>
+                <div class="fg">
+                    <label>Телефон*</label>
+                    <input type="text" placeholder="Ваш телефон">
+                </div>
+                <div class="fg fg--time">
+                    <label>Время замера</label>
+                    <div class="time">
+                        <div class="time-field">
+                            <div class="time-field__icon">
+                                <img src="img/calendar.svg" alt="">
+                            </div>
+                            <div class="time-field__wrap">
+                                <div class="time-field__placeholder text20">
+                                    Введите удобное для вас время
+                                </div>
+                                <div class="time-field__value">
+                                    <div class="time-field__date text20"></div>
+                                    <div class="time-field__time text20"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-modal">
+                            <div class="time-modal__wrap">
+                                <div class="time-modal__col">
+                                    <input type="text" class="date-input">
+                                </div>
+                                <div class="time-modal__col">
+                                    <div class="hours-picker">
+                                        <div class="hours-picker__title semi-bold-text">
+                                            Time
+                                        </div>
+                                        <div class="hours-picker__items">
+                                            <div data-time="09:00" class="hours-picker__item _active">
+                                                09:00
+                                            </div>
+                                            <div data-time="10:00" class="hours-picker__item">
+                                                10:00
+                                            </div>
+                                            <div data-time="11:00" class="hours-picker__item">
+                                                11:00
+                                            </div>
+                                            <div data-time="12:00" class="hours-picker__item">
+                                                12:00
+                                            </div>
+                                            <div data-time="13:00" class="hours-picker__item">
+                                                13:00
+                                            </div>
+                                            <div data-time="14:00" class="hours-picker__item">
+                                                14:00
+                                            </div>
+                                            <div data-time="15:00" class="hours-picker__item">
+                                                15:00
+                                            </div>
+                                            <div data-time="16:00" class="hours-picker__item">
+                                                16:00
+                                            </div>
+                                            <div data-time="17:00" class="hours-picker__item">
+                                                17:00
+                                            </div>
+                                            <div data-time="18:00" class="hours-picker__item">
+                                                18:00
+                                            </div>
+                                            <div data-time="19:00" class="hours-picker__item">
+                                                19:00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-modal__nav">
+                                <button type="button" class="time-modal__btn m-btn">
+                                    <span>Выбрать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file-input">
+                    <div class="file-input__top">
+                        <div class="file-input__title text16 text14-mob">
+                            Загрузите фото документа, удостоверяющего личность
+                            (pdf, png,jpg)
+                        </div>
+                    </div>
+                    <div class="file-input__bottom">
+                        <input type="file">
+                        <div class="file-input__area">
+                            <div class="text14">
+                                Нажмите, чтобы просмотреть или перетащить файлы
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="fg">
+                    <label>Адрес</label>
+                    <textarea></textarea>
+                </div>
+                <div class="modal-form__hint">
+                    <div class="text16 text14-mob">
+                        Отправляя форму я соглашаюсь с условиями <a href="">Политики конфиденциальности</a>
+                    </div>
+                </div>
+                <button class="modal-form__btn m-btn m-btn-green">
+                    <span>Пригласить дизайнера</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="modal" id="callModal2">
+        <div class="modal__bg modal-bg _close-modal"></div>
+        <div class="modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.2806 18.2193C19.3502 18.289 19.4055 18.3717 19.4432 18.4628C19.4809 18.5538 19.5003 18.6514 19.5003 18.7499C19.5003 18.8485 19.4809 18.9461 19.4432 19.0371C19.4055 19.1281 19.3502 19.2109 19.2806 19.2806C19.2109 19.3502 19.1281 19.4055 19.0371 19.4432C18.9461 19.4809 18.8485 19.5003 18.7499 19.5003C18.6514 19.5003 18.5538 19.4809 18.4628 19.4432C18.3717 19.4055 18.289 19.3502 18.2193 19.2806L11.9999 13.0602L5.78055 19.2806C5.63982 19.4213 5.44895 19.5003 5.24993 19.5003C5.05091 19.5003 4.86003 19.4213 4.7193 19.2806C4.57857 19.1398 4.49951 18.949 4.49951 18.7499C4.49951 18.5509 4.57857 18.36 4.7193 18.2193L10.9396 11.9999L4.7193 5.78055C4.57857 5.63982 4.49951 5.44895 4.49951 5.24993C4.49951 5.05091 4.57857 4.86003 4.7193 4.7193C4.86003 4.57857 5.05091 4.49951 5.24993 4.49951C5.44895 4.49951 5.63982 4.57857 5.78055 4.7193L11.9999 10.9396L18.2193 4.7193C18.36 4.57857 18.5509 4.49951 18.7499 4.49951C18.949 4.49951 19.1398 4.57857 19.2806 4.7193C19.4213 4.86003 19.5003 5.05091 19.5003 5.24993C19.5003 5.44895 19.4213 5.63982 19.2806 5.78055L13.0602 11.9999L19.2806 18.2193Z" fill="black" />
+                </svg>
+            </button>
+            <div class="modal__top">
+                <div class="h3">
+                    Вызов Дизайнера-замершика
+                </div>
+            </div>
+            <div class="modal__desc">
+                <p>Оставьте свои контактные данные, чтобы мы связались с вами и договорились о приезде нашего специалиста.</p>
+                <p>Замеры производятся с 9:00 до 22:00 ежедневно, включая субботу и воскресенье. Дизайнер привезет образцы материалов и на месте подготовит проект планировки. Выезд мастера, замеры и подготовка проекта осуществляются бесплатно!</p>
+            </div>
+            <form action="" class="modal-form">
+                <div class="fg">
+                    <label>Имя*</label>
+                    <input type="text" placeholder="Ваше имя">
+                </div>
+                <div class="fg">
+                    <label>Телефон*</label>
+                    <input type="text" placeholder="Ваш телефон">
+                </div>
+                <div class="fg fg--time">
+                    <label>Время замера</label>
+                    <div class="time">
+                        <div class="time-field">
+                            <div class="time-field__icon">
+                                <img src="img/calendar.svg" alt="">
+                            </div>
+                            <div class="time-field__wrap">
+                                <div class="time-field__placeholder text20">
+                                    Введите удобное для вас время
+                                </div>
+                                <div class="time-field__value">
+                                    <div class="time-field__date text20"></div>
+                                    <div class="time-field__time text20"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-modal">
+                            <div class="time-modal__wrap">
+                                <div class="time-modal__col">
+                                    <input type="text" class="date-input">
+                                </div>
+                                <div class="time-modal__col">
+                                    <div class="hours-picker">
+                                        <div class="hours-picker__title semi-bold-text">
+                                            Time
+                                        </div>
+                                        <div class="hours-picker__items">
+                                            <div data-time="09:00" class="hours-picker__item _active">
+                                                09:00
+                                            </div>
+                                            <div data-time="10:00" class="hours-picker__item">
+                                                10:00
+                                            </div>
+                                            <div data-time="11:00" class="hours-picker__item">
+                                                11:00
+                                            </div>
+                                            <div data-time="12:00" class="hours-picker__item">
+                                                12:00
+                                            </div>
+                                            <div data-time="13:00" class="hours-picker__item">
+                                                13:00
+                                            </div>
+                                            <div data-time="14:00" class="hours-picker__item">
+                                                14:00
+                                            </div>
+                                            <div data-time="15:00" class="hours-picker__item">
+                                                15:00
+                                            </div>
+                                            <div data-time="16:00" class="hours-picker__item">
+                                                16:00
+                                            </div>
+                                            <div data-time="17:00" class="hours-picker__item">
+                                                17:00
+                                            </div>
+                                            <div data-time="18:00" class="hours-picker__item">
+                                                18:00
+                                            </div>
+                                            <div data-time="19:00" class="hours-picker__item">
+                                                19:00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-modal__nav">
+                                <button type="button" class="time-modal__btn m-btn">
+                                    <span>Выбрать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="file-input _uploaded">
+                    <div class="file-input__top">
+                        <div class="file-input__title text14 text14-mob">
+                            Загрузите фото документа, удостоверяющего личность
+                            (pdf, png,jpg)
+                        </div>
+                    </div>
+                    <div class="file-uploading">
+                        <div class="file-uploading__icon">
+                            <img src="img/file.svg" alt="">
+                        </div>
+                        <div class="file-uploading__content">
+                            <div class="file-uploading__top">
+                                <div class="file-uploading__name">
+                                    Photo.jpg
+                                </div>
+                                <div class="file-uploading__size">
+                                    3.5Мб
+                                </div>
+                                <button class="file-uploading__cancel">
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5 9L9.5 15M9.5 9L15.5 15M22.5 12C22.5 17.5228 18.0228 22 12.5 22C6.97715 22 2.5 17.5228 2.5 12C2.5 6.47715 6.97715 2 12.5 2C18.0228 2 22.5 6.47715 22.5 12Z" stroke="#1C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress">
+                                <span style="width: 73%;"></span>
+                            </div>
+                            <div class="file-uploading__bottom">
+                                <div class="file-uploading__info">73% выгружен</div>
+                                <div class="file-uploading__info">120KB/ceк</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="fg">
+                    <label>Адрес</label>
+                    <textarea></textarea>
+                </div>
+                <div class="modal-form__hint">
+                    <div class="text16 text14-mob">
+                        Отправляя форму я соглашаюсь с условиями <a href="">Политики конфиденциальности</a>
+                    </div>
+                </div>
+                <button class="modal-form__btn m-btn m-btn-green">
+                    <span>Пригласить дизайнера</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="modal" id="callModal3">
+        <div class="modal__bg modal-bg _close-modal"></div>
+        <div class="modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.2806 18.2193C19.3502 18.289 19.4055 18.3717 19.4432 18.4628C19.4809 18.5538 19.5003 18.6514 19.5003 18.7499C19.5003 18.8485 19.4809 18.9461 19.4432 19.0371C19.4055 19.1281 19.3502 19.2109 19.2806 19.2806C19.2109 19.3502 19.1281 19.4055 19.0371 19.4432C18.9461 19.4809 18.8485 19.5003 18.7499 19.5003C18.6514 19.5003 18.5538 19.4809 18.4628 19.4432C18.3717 19.4055 18.289 19.3502 18.2193 19.2806L11.9999 13.0602L5.78055 19.2806C5.63982 19.4213 5.44895 19.5003 5.24993 19.5003C5.05091 19.5003 4.86003 19.4213 4.7193 19.2806C4.57857 19.1398 4.49951 18.949 4.49951 18.7499C4.49951 18.5509 4.57857 18.36 4.7193 18.2193L10.9396 11.9999L4.7193 5.78055C4.57857 5.63982 4.49951 5.44895 4.49951 5.24993C4.49951 5.05091 4.57857 4.86003 4.7193 4.7193C4.86003 4.57857 5.05091 4.49951 5.24993 4.49951C5.44895 4.49951 5.63982 4.57857 5.78055 4.7193L11.9999 10.9396L18.2193 4.7193C18.36 4.57857 18.5509 4.49951 18.7499 4.49951C18.949 4.49951 19.1398 4.57857 19.2806 4.7193C19.4213 4.86003 19.5003 5.05091 19.5003 5.24993C19.5003 5.44895 19.4213 5.63982 19.2806 5.78055L13.0602 11.9999L19.2806 18.2193Z" fill="black" />
+                </svg>
+            </button>
+            <div class="modal__top">
+                <div class="h3">
+                    Вызов Дизайнера-замершика
+                </div>
+            </div>
+            <div class="modal__desc">
+                <p>Оставьте свои контактные данные, чтобы мы связались с вами и договорились о приезде нашего специалиста.</p>
+                <p>Замеры производятся с 9:00 до 22:00 ежедневно, включая субботу и воскресенье. Дизайнер привезет образцы материалов и на месте подготовит проект планировки. Выезд мастера, замеры и подготовка проекта осуществляются бесплатно!</p>
+            </div>
+            <form action="" class="modal-form">
+                <div class="fg">
+                    <label>Имя*</label>
+                    <input type="text" placeholder="Ваше имя">
+                </div>
+                <div class="fg">
+                    <label>Телефон*</label>
+                    <input type="text" placeholder="Ваш телефон">
+                </div>
+                <div class="fg fg--time">
+                    <label>Время замера</label>
+                    <div class="time">
+                        <div class="time-field">
+                            <div class="time-field__icon">
+                                <img src="img/calendar.svg" alt="">
+                            </div>
+                            <div class="time-field__wrap">
+                                <div class="time-field__placeholder text20">
+                                    Введите удобное для вас время
+                                </div>
+                                <div class="time-field__value">
+                                    <div class="time-field__date text20"></div>
+                                    <div class="time-field__time text20"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-modal">
+                            <div class="time-modal__wrap">
+                                <div class="time-modal__col">
+                                    <input type="text" class="date-input">
+                                </div>
+                                <div class="time-modal__col">
+                                    <div class="hours-picker">
+                                        <div class="hours-picker__title semi-bold-text">
+                                            Time
+                                        </div>
+                                        <div class="hours-picker__items">
+                                            <div data-time="09:00" class="hours-picker__item _active">
+                                                09:00
+                                            </div>
+                                            <div data-time="10:00" class="hours-picker__item">
+                                                10:00
+                                            </div>
+                                            <div data-time="11:00" class="hours-picker__item">
+                                                11:00
+                                            </div>
+                                            <div data-time="12:00" class="hours-picker__item">
+                                                12:00
+                                            </div>
+                                            <div data-time="13:00" class="hours-picker__item">
+                                                13:00
+                                            </div>
+                                            <div data-time="14:00" class="hours-picker__item">
+                                                14:00
+                                            </div>
+                                            <div data-time="15:00" class="hours-picker__item">
+                                                15:00
+                                            </div>
+                                            <div data-time="16:00" class="hours-picker__item">
+                                                16:00
+                                            </div>
+                                            <div data-time="17:00" class="hours-picker__item">
+                                                17:00
+                                            </div>
+                                            <div data-time="18:00" class="hours-picker__item">
+                                                18:00
+                                            </div>
+                                            <div data-time="19:00" class="hours-picker__item">
+                                                19:00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-modal__nav">
+                                <button type="button" class="time-modal__btn m-btn">
+                                    <span>Выбрать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="file-input _uploaded">
+                    <div class="file-input__top">
+                        <div class="file-input__title text14 text14-mob">
+                            Загрузите фото документа, удостоверяющего личность
+                            (pdf, png,jpg)
+                        </div>
+                    </div>
+                    <div class="file">
+                        <div class="file__icon">
+                            <img src="img/file.svg" alt="">
+                        </div>
+                        <div class="file__content">
+                            <div class="file__info">
+                                <div class="file__name">Photo.jpg</div>
+                                <div class="file__time">2m ago</div>
+                            </div>
+                            <div class="file__size">
+                                <div class="text14">3.5Мб</div>
+                            </div>
+                            <button class="file__delete">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.6668 1.16667V2H14.1668C14.2994 2 14.4266 2.05268 14.5204 2.14645C14.6142 2.24021 14.6668 2.36739 14.6668 2.5C14.6668 2.63261 14.6142 2.75979 14.5204 2.85355C14.4266 2.94732 14.2994 3 14.1668 3H1.8335C1.70089 3 1.57371 2.94732 1.47994 2.85355C1.38617 2.75979 1.3335 2.63261 1.3335 2.5C1.3335 2.36739 1.38617 2.24021 1.47994 2.14645C1.57371 2.05268 1.70089 2 1.8335 2H5.3335V1.16667C5.3335 0.522667 5.85616 0 6.50016 0H9.50016C10.1442 0 10.6668 0.522667 10.6668 1.16667ZM6.3335 1.16667V2H9.66683V1.16667C9.66683 1.12246 9.64927 1.08007 9.61801 1.04882C9.58676 1.01756 9.54436 1 9.50016 1H6.50016C6.45596 1 6.41357 1.01756 6.38231 1.04882C6.35106 1.08007 6.3335 1.12246 6.3335 1.16667ZM3.3315 4.11867C3.3258 4.05284 3.30711 3.9888 3.27651 3.93024C3.24591 3.87168 3.204 3.81977 3.15322 3.7775C3.10244 3.73523 3.04378 3.70345 2.98064 3.68398C2.9175 3.66452 2.85112 3.65777 2.78536 3.66411C2.71959 3.67045 2.65573 3.68977 2.59748 3.72094C2.53922 3.75211 2.48772 3.79452 2.44595 3.84571C2.40418 3.89691 2.37297 3.95587 2.35413 4.0192C2.33528 4.08253 2.32918 4.14896 2.33616 4.21467L3.2775 13.9467C3.30565 14.2351 3.44017 14.5028 3.65485 14.6975C3.86953 14.8922 4.149 15 4.43883 15H11.5615C11.8514 15 12.131 14.8921 12.3457 14.6972C12.5604 14.5024 12.6948 14.2346 12.7228 13.946L13.6648 4.21467C13.6776 4.08259 13.6373 3.95086 13.5529 3.84847C13.4685 3.74607 13.3469 3.6814 13.2148 3.66867C13.0828 3.65594 12.951 3.69619 12.8486 3.78059C12.7462 3.86498 12.6816 3.98659 12.6688 4.11867L11.7275 13.8493C11.7235 13.8906 11.7043 13.9289 11.6736 13.9567C11.6429 13.9846 11.6029 14 11.5615 14H4.43883C4.39738 14 4.35741 13.9846 4.32671 13.9567C4.29602 13.9289 4.27681 13.8906 4.27283 13.8493L3.3315 4.11867Z" fill="#101828" />
+                                    <path d="M6.13755 5.00022C6.20313 4.99634 6.26883 5.00542 6.3309 5.02695C6.39297 5.04847 6.45018 5.08202 6.49928 5.12567C6.54838 5.16932 6.58839 5.22221 6.61704 5.28133C6.64568 5.34045 6.66239 5.40464 6.66622 5.47022L6.99955 11.1369C7.00733 11.2694 6.96215 11.3996 6.87395 11.4988C6.78574 11.598 6.66174 11.6581 6.52922 11.6659C6.3967 11.6737 6.26652 11.6285 6.16731 11.5403C6.0681 11.4521 6.008 11.3281 6.00022 11.1956L5.66689 5.52888C5.66301 5.46331 5.67209 5.39761 5.69362 5.33554C5.71514 5.27347 5.74869 5.21625 5.79234 5.16716C5.83599 5.11806 5.88888 5.07805 5.948 5.0494C6.00712 5.02076 6.07131 5.00404 6.13689 5.00022H6.13755ZM10.3329 5.52888C10.3407 5.39636 10.2955 5.26618 10.2073 5.16698C10.1191 5.06777 9.99507 5.00766 9.86255 4.99988C9.73003 4.9921 9.59985 5.03729 9.50064 5.12549C9.40144 5.2137 9.34133 5.3377 9.33355 5.47022L9.00022 11.1369C8.99244 11.2693 9.03759 11.3994 9.12573 11.4986C9.21387 11.5977 9.33779 11.6578 9.47022 11.6656C9.60265 11.6733 9.73275 11.6282 9.83189 11.54C9.93104 11.4519 9.99111 11.328 9.99889 11.1956L10.3329 5.52888Z" fill="#101828" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fg">
+                    <label>Адрес</label>
+                    <textarea></textarea>
+                </div>
+                <div class="modal-form__hint">
+                    <div class="text16 text14-mob">
+                        Отправляя форму я соглашаюсь с условиями <a href="">Политики конфиденциальности</a>
+                    </div>
+                </div>
+                <button class="modal-form__btn m-btn m-btn-green">
+                    <span>Пригласить дизайнера</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="modal" id="inviteModal">
+        <div class="modal__bg modal-bg _close-modal"></div>
+        <div class="modal__dialog">
+            <button class="close-btn _close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.2806 18.2193C19.3502 18.289 19.4055 18.3717 19.4432 18.4628C19.4809 18.5538 19.5003 18.6514 19.5003 18.7499C19.5003 18.8485 19.4809 18.9461 19.4432 19.0371C19.4055 19.1281 19.3502 19.2109 19.2806 19.2806C19.2109 19.3502 19.1281 19.4055 19.0371 19.4432C18.9461 19.4809 18.8485 19.5003 18.7499 19.5003C18.6514 19.5003 18.5538 19.4809 18.4628 19.4432C18.3717 19.4055 18.289 19.3502 18.2193 19.2806L11.9999 13.0602L5.78055 19.2806C5.63982 19.4213 5.44895 19.5003 5.24993 19.5003C5.05091 19.5003 4.86003 19.4213 4.7193 19.2806C4.57857 19.1398 4.49951 18.949 4.49951 18.7499C4.49951 18.5509 4.57857 18.36 4.7193 18.2193L10.9396 11.9999L4.7193 5.78055C4.57857 5.63982 4.49951 5.44895 4.49951 5.24993C4.49951 5.05091 4.57857 4.86003 4.7193 4.7193C4.86003 4.57857 5.05091 4.49951 5.24993 4.49951C5.44895 4.49951 5.63982 4.57857 5.78055 4.7193L11.9999 10.9396L18.2193 4.7193C18.36 4.57857 18.5509 4.49951 18.7499 4.49951C18.949 4.49951 19.1398 4.57857 19.2806 4.7193C19.4213 4.86003 19.5003 5.05091 19.5003 5.24993C19.5003 5.44895 19.4213 5.63982 19.2806 5.78055L13.0602 11.9999L19.2806 18.2193Z" fill="black" />
+                </svg>
+            </button>
+            <form action="" class="modal-form">
+                <div class="fg _error">
+                    <label>Имя*</label>
+                    <input type="text" placeholder="Ваше имя">
+                    <div class="fg__error-text text14">
+                        Это поле не может быть пустым
+                    </div>
+                </div>
+                <div class="fg">
+                    <label>Телефон*</label>
+                    <input type="text" placeholder="Ваш телефон">
+                </div>
+                <div class="fg _full">
+                    <label>Комментарий</label>
+                    <textarea></textarea>
+                </div>
+                <div class="modal-form__hint">
+                    <div class="text16 text14-mob">
+                        Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных *
+                    </div>
+                </div>
+                <div class="modal-form__nav">
+                    <button class="modal-form__btn m-btn m-btn-green">
+                        <span>Пригласить дизайнера</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
